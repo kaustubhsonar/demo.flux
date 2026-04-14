@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 1m0s
   # Replace the URL below with the HTTPS/SSH URL of this repository
-  url: https://github.com/your-org/your-repo.git
+  url: https://github.com/kaustubhsonar/demo.flux.git
   ref:
     branch: main
   # If your repo is private, configure a Kubernetes Secret with SSH or HTTPS credentials
