@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: flux-system
+  labels:
+    name: flux-system
+    # optional: indicate this namespace is managed by flux
+    managed-by: flux

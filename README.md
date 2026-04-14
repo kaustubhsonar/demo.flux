@@ -28,3 +28,26 @@ Notes:
 - Ingress is optional and controlled by values.ingress.enabled in values.yaml.
 - Chart path: ./helm-charts/nginx-chart
 
+Flux bootstrap examples:
+
+- Bootstrap Flux on GitHub (creates repo or connects to existing; replace placeholders):
+  flux bootstrap github \
+    --owner=GITHUB_USER \
+    --repository=REPO \
+    --branch=main \
+    --path=./flux \
+    --personal
+
+- Bootstrap Flux with an existing repo via HTTPS/SSH (use when you already have a repo):
+  flux bootstrap git \
+    --url=ssh://git@github.com/your-org/your-repo.git \
+    --branch=main \
+    --path=./flux
+
+Notes:
+- For private repos, ensure you have proper credentials (SSH key or GitHub token).
+- flux bootstrap will create the flux-system namespace and install Flux controllers.
+- After bootstrap, verify with:
+  kubectl -n flux-system get pods
+  flux check
+

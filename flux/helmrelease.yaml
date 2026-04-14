@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: my-nginx
+  namespace: default
+spec:
+  interval: 5m
+  install:
+    remediation:
+      retries: 1
+  upgrade:
+    remediation:
+      retries: 1
+  chart:
+    spec:
+      # path to the chart inside the same git repository
+      chart: ./helm-charts/nginx-chart
+      sourceRef:
+        kind: GitRepository
+        name: demo-flux
+        namespace: flux-system
+  values:
+    # override chart values if needed
+    replicaCount: 1
+    image:
+      repository: nginx
+      tag: "1.21.6"
