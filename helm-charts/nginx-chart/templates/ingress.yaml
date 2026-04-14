@@ -1,0 +1,26 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ printf "%s-nginx-ingress" .Release.Name }}
+  annotations:
+{{ toYaml .Values.ingress.annotations | indent 4 }}
+spec:
+  rules:
+{{- range .Values.ingress.hosts }}
+    - host: {{ .host }}
+      http:
+        paths:
+{{- range .paths }}
+          - path: {{ . }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ printf "%s-nginx-svc" $.Release.Name }}
+                port:
+                  number: {{ $.Values.service.port }}
+{{- end }}
+{{- end }}
+  tls:
+{{ toYaml .Values.ingress.tls | indent 4 }}
+{{- end }}
