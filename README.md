@@ -40,7 +40,7 @@ Flux bootstrap examples:
 
 - Bootstrap Flux with an existing repo via HTTPS/SSH (use when you already have a repo):
   flux bootstrap git \
-    --url=ssh://git@github.com/your-org/your-repo.git \
+    --git@github.com:kaustubhsonar/demo.flux.git \
     --branch=main \
     --path=./flux
 
