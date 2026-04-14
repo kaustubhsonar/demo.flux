@@ -1,10 +1,10 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
+apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: demo-flux
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 1m
   # Replace the URL below with the HTTPS/SSH URL of this repository
   url: https://github.com/kaustubhsonar/demo.flux.git
   ref:
