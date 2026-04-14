@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 1m
   # Replace with your repository URL (HTTPS or SSH)
-  url: "https://github.com/kaustubhsonar/demo.flux"
+  url: "https://github.com/kaustubhsonar/demo.flux.git"
   # optional: set branch if not main
   ref:
     branch: main
