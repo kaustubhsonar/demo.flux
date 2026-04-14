@@ -4,6 +4,7 @@ metadata:
   name: my-nginx
   namespace: default
 spec:
+  targetNamespace: default
   interval: 5m
   install:
     remediation:
