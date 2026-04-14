@@ -3,6 +3,8 @@ kind: GitRepository
 metadata:
   name: demo-flux
   namespace: flux-system
+  annotations:
+    "demo.flux/notes": "bootstrap --path should point to the folder containing Flux manifests (flux-system). Helm charts live in ./helm-charts and are referenced from HelmRelease resources in flux-system."
 spec:
   interval: 1m
   # TODO: replace with your repository URL (https or ssh)
