@@ -7,9 +7,6 @@ metadata:
     "demo.flux/notes": "bootstrap --path should point to the folder containing Flux manifests (flux-system). Helm charts live in ./helm-charts and are referenced from HelmRelease resources in flux-system."
 spec:
   interval: 1m
-  # Use the HTTPS URL and reference the HTTPS secret below
   url: "https://github.com/kaustubhsonar/demo.flux"
   ref:
     branch: main
-  secretRef:
-    name: demo-flux-https
