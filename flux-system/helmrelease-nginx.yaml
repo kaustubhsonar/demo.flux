@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx
+  namespace: default   # change to the namespace where you want the chart installed
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # path to the chart inside this git repository
+      chart: ./helm-charts/nginx-chart
+      sourceRef:
+        kind: GitRepository
+        name: demo-flux
+        namespace: flux-system
+  # optional overrides; remove or extend as required
+  values:
+    replicaCount: 1

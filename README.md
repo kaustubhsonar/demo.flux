@@ -32,7 +32,7 @@ Flux bootstrap examples:
 
 - Bootstrap Flux on GitHub (creates repo or connects to existing; replace placeholders):
   flux bootstrap github \
-    --owner=GITHUB_USER \
+    --owner=$GITHUB_USER \
     --repository=REPO \
     --branch=main \
     --path=./flux \
